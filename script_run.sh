@@ -11,11 +11,12 @@ mkdir -p /data/bind
 rm -rf /etc/bind
 ln -sf /data/bind/etc /etc/bind
 chmod -R 0775 /data/bind/etc
-chown -R bind:bind /data/bind
+
 mkdir -p /data/bind/lib
-chown bind:bind /data/bind/lib
 rm -rf /var/lib/bind
 ln -sf /data/bind/lib /var/lib/bind
+
+chown -R bind:bind /data/bind
 
 mkdir -p /data/webmin
 chmod -R 0755 /data/webmin
