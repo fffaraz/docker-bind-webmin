@@ -25,4 +25,4 @@ rm -rf /etc/webmin
 ln -sf /data/webmin/etc /etc/webmin
 
 [ "$WEBMIN_ENABLED" == "true" ] && /etc/init.d/webmin start
-exec /usr/sbin/named -u bind
+exec /usr/sbin/named -u bind -g
