@@ -1,12 +1,15 @@
 #!/bin/bash
 set -euxo pipefail
 
+export DEBIAN_FRONTEND=noninteractive
+apt-get -yq update < /dev/null
+apt-get -yq install bind9 bind9-host wget
+
 echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list
 wget -qO- http://www.webmin.com/jcameron-key.asc | apt-key add -
 
-export DEBIAN_FRONTEND=noninteractive
 apt-get -yq update < /dev/null
-apt-get -yq install bind9 bind9-host webmin
+apt-get -yq install webmin < /dev/null
 
 mkdir -m 0775 -p /var/run/named
 chown root:bind /var/run/named
