@@ -2,6 +2,8 @@
 set -euxo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
+rm -rf /etc/apt/apt.conf.d/docker-gzip-indexes
+
 apt-get -yq update < /dev/null
 apt-get -yq install apt-transport-https bind9 bind9-host ca-certificates net-tools unzip wget < /dev/null
 apt-get -yq install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python < /dev/null
