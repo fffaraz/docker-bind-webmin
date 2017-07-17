@@ -28,9 +28,9 @@ cat > /etc/bind/named.conf.options <<'EOL'
 options {
 	directory "/var/cache/bind";
 	dnssec-validation auto;
-	auth-nxdomain no;    # conform to RFC1035
+	auth-nxdomain no; # conform to RFC1035
 	listen-on-v6 { any; };
 	recursion no;
 	allow-transfer { none; };
-}
+};
 EOL
